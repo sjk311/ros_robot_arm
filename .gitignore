@@ -1,3 +1,29 @@
+# 빌드/설치/로그 디렉토리 (colcon build 후 생성)
 build/
 install/
 log/
+
+# Python 캐시
+__pycache__/
+*.pyc
+*.pyo
+
+# 에디터 관련
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 백업/임시 파일
+*~
+*.bak
+*.tmp
+
+# DS_Store (macOS)
+.DS_Store
+
+# ROS 2 launch log
+launch/*.log
+
+# ROS 2 package-specific
+*.egg-info/
