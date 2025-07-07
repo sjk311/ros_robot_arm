@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="robot_arm_description">
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.10702 -0.045658 0.079964"
+        rpy="0 0 0" />
+      <mass
+        value="0.072275" />
+      <inertia
+        ixx="4.5914E-05"
+        ixy="-5.1278E-12"
+        ixz="-6.7334E-12"
+        iyy="2.3262E-05"
+        iyz="-1.2661E-11"
+        izz="5.7978E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="one_Link">
+    <inertial>
+      <origin
+        xyz="-8.8678E-05 -0.10362 0.022426"
+        rpy="0 0 0" />
+      <mass
+        value="0.3878" />
+      <inertia
+        ixx="0.00082526"
+        ixy="1.7542E-08"
+        ixz="-1.9552E-10"
+        iyy="0.00011128"
+        iyz="-4.8804E-06"
+        izz="0.00082685" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_description/meshes/one_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_description/meshes/one_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="0.081042 -0.079964 -0.023257"
+      rpy="-3.1416 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="one_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="two_Link">
+    <inertial>
+      <origin
+        xyz="-0.084953 -0.028972 8.3035E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.30735" />
+      <inertia
+        ixx="9.6387E-05"
+        ixy="-4.79E-06"
+        ixz="-7.9147E-09"
+        iyy="0.00056675"
+        iyz="-2.9627E-10"
+        izz="0.00056878" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_description/meshes/two_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_description/meshes/two_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="continuous">
+    <origin
+      xyz="-0.0001 -0.2005 0.041401"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="one_Link" />
+    <child
+      link="two_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>

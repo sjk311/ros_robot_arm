@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="robot_arm">
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.5 -0.05 2.0" rpy="0 0 0"/>
+
+      <mass value="0.15528"/>
+      <inertia ixx="0.00016123" ixy="5.798E-12" ixz="-7.8162E-12"
+               iyy="0.00011226" iyz="-1.2811E-11" izz="0.00010187"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm/meshes/base_link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm/meshes/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- First Link -->
+  <link name="one_Link">
+    <inertial>
+      <origin xyz="-0.10431 -0.014043 9.7653E-10" rpy="0 0 0"/>
+      <mass value="0.39391"/>
+      <inertia ixx="0.00011321" ixy="7.5644E-06" ixz="-1.5851E-08"
+               iyy="0.00084506" iyz="-2.12E-10" izz="0.00084457"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm/meshes/one_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm/meshes/one_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- First Joint -->
+  <joint name="one" type="continuous">
+    <origin xyz="-0.48381 0.051748 0" rpy="1.5708 0 3.1416"/>
+    <parent link="base_link"/>
+    <child link="one_Link"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Second Link -->
+  <link name="two_Link">
+    <inertial>
+      <origin xyz="0.00010564 0.086252 0.030414" rpy="0 0 0"/>
+      <mass value="0.29777"/>
+      <inertia ixx="0.00057563" ixy="-8.9808E-08" ixz="-1.1134E-07"
+               iyy="9.7476E-05" iyz="-6.0541E-06" izz="0.00057233"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm/meshes/two_Link.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm/meshes/two_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Second Joint -->
+  <joint name="two" type="continuous">
+    <origin xyz="-0.2005 -0.031301 0" rpy="1.5708 1.5708 0"/>
+    <parent link="one_Link"/>
+    <child link="two_Link"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>
+

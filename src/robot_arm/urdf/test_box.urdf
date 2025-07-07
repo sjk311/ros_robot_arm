@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="test_box">
+
+  <!-- Dummy world link -->
+  <link name="world"/>
+
+  <!-- 시각화할 박스 -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm/meshes/box_link.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- world → base_link 연결을 위한 고정 조인트 -->
+  <joint name="fixed_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+</robot>
+

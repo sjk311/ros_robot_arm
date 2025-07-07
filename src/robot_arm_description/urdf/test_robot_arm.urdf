@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="robot_arm_description">
+
+  <!-- base_link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm_description/meshes/base_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- one_Link -->
+  <link name="one_Link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm_description/meshes/one_Link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- joint1: base_link → one_Link -->
+  <joint name="joint1" type="continuous">
+    <parent link="base_link"/>
+    <child link="one_Link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- two_Link -->
+  <link name="two_Link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://robot_arm_description/meshes/two_Link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- joint2: one_Link → two_Link -->
+  <joint name="joint2" type="continuous">
+    <parent link="one_Link"/>
+    <child link="two_Link"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>
+

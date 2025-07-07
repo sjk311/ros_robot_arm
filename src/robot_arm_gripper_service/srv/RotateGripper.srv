@@ -1,0 +1,4 @@
+float32 angle_deg  # 회전할 각도 (상대값, +는 시계 방향)
+---
+bool success
+string message
